@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="fragment_search_ll_margin_between">8dp</dimen>
+    <dimen name="fragment_search_button_margin_top">16dp</dimen>
+    <dimen name="fragment_search_button_margin_between">8dp</dimen>
+</resources>
