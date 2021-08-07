@@ -1,7 +1,8 @@
-package dev.ohjiho.yearfacts
+package dev.ohjiho.yearfacts.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import dev.ohjiho.yearfacts.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

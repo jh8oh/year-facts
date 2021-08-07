@@ -17,6 +17,7 @@
         app:layout_constraintVertical_bias="0.4">
 
         <EditText
+            android:id="@+id/year_edit_text"
             style="@style/TextAppearance.MaterialComponents.Headline4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -25,6 +26,7 @@
             android:inputType="number" />
 
         <Spinner
+            android:id="@+id/era_spinner"
             style="@style/TextAppearance.MaterialComponents.Headline4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -44,12 +46,14 @@
         app:layout_constraintTop_toBottomOf="@id/fragment_search_year_ll">
 
         <Button
+            android:id="@+id/search_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/fragment_search_search_button"
             tools:ignore="ButtonStyle" />
 
         <Button
+            android:id="@+id/random_button"
             style="?android:attr/buttonBarButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
