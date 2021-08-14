@@ -1,4 +1,4 @@
-package dev.ohjiho.yearfacts.ui.search
+package dev.ohjiho.yearfacts.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -15,7 +15,7 @@ class SearchFragment : Fragment() {
     private var _binding: FragmentSearchBinding? = null
     private val binding get() = _binding!!
 
-    private val searchViewModel: SearchViewModel by viewModel()
+    private val yearFactsViewModel: YearFactsViewModel by viewModel()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         _binding = FragmentSearchBinding.inflate(inflater, container, false)
@@ -30,11 +30,11 @@ class SearchFragment : Fragment() {
         }
 
         binding.searchButton.setOnClickListener {
-            searchViewModel.search(Integer.parseInt(binding.yearEditText.text.toString()), isSpinnerEraAD())
+            yearFactsViewModel.search(Integer.parseInt(binding.yearEditText.text.toString()), isSpinnerEraAD())
         }
 
         binding.randomButton.setOnClickListener {
-            searchViewModel.random()
+            yearFactsViewModel.random()
         }
 
         return binding.root
