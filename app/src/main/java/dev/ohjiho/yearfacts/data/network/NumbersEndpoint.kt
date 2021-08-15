@@ -14,7 +14,6 @@ interface NumbersEndpoint {
     @GET("{Year}/year")
     fun getYear(
         @Path("Year") year: String,
-        @Query("notfound") notFound: String = "floor",
         @Query("json") json: String = "true",
         @Query("fragment") fragment: String = "true"
     ): Call<YearFact>
@@ -22,7 +21,6 @@ interface NumbersEndpoint {
     @Headers("x-rapidapi-key: ${BuildConfig.API_KEY}", "x-rapidapi-host: numbersapi.p.rapidapi.com")
     @GET("random/year")
     fun getRandom(
-        @Query("notfound") notFound: String = "floor",
         @Query("json") json: String = "true",
         @Query("fragment") fragment: String = "true"
     ): Call<YearFact>
