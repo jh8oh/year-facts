@@ -8,6 +8,7 @@
     </string-array>
     <string name="search_button">Search</string>
     <string name="random_button">Random</string>
+    <string name="empty_year_error">You did not enter a year</string>
 
     <string name="reroll_button">Reroll</string>
     <string name="back_button">Back</string>

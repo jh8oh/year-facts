@@ -1,10 +1,12 @@
 package dev.ohjiho.yearfacts.ui
 
 import android.os.Bundle
+import android.text.TextUtils
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import dev.ohjiho.yearfacts.R
@@ -31,10 +33,14 @@ class SearchFragment : Fragment() {
         }
 
         binding.searchButton.setOnClickListener {
-            yearFactsViewModel.search(Integer.parseInt(binding.yearEditText.text.toString()), isSpinnerEraAD())
+            if (TextUtils.isEmpty(binding.yearEditText.text)) {
+                Toast.makeText(requireContext(), R.string.empty_year_error, Toast.LENGTH_SHORT).show()
+            } else {
+                yearFactsViewModel.search(Integer.parseInt(binding.yearEditText.text.toString()), isSpinnerEraAD())
 
-            val action = SearchFragmentDirections.toResultFragment()
-            binding.root.findNavController().navigate(action)
+                val action = SearchFragmentDirections.toResultFragment()
+                binding.root.findNavController().navigate(action)
+            }
         }
 
         binding.randomButton.setOnClickListener {
