@@ -9,6 +9,19 @@
         android:id="@+id/searchFragment"
         android:name="dev.ohjiho.yearfacts.ui.SearchFragment"
         android:label="SearchFragment"
-        tools:layout="@layout/fragment_search" />
+        tools:layout="@layout/fragment_search">
+        <action
+            android:id="@+id/toResultFragment"
+            app:destination="@id/resultFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/resultFragment"
+        android:name="dev.ohjiho.yearfacts.ui.ResultFragment"
+        android:label="ResultFragment"
+        tools:layout="@layout/fragment_result">
+        <action
+            android:id="@+id/toSearchFragment"
+            app:destination="@id/searchFragment" />
+    </fragment>
 
 </navigation>

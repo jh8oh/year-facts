@@ -6,16 +6,17 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 import dev.ohjiho.yearfacts.R
 import dev.ohjiho.yearfacts.databinding.FragmentSearchBinding
-import org.koin.androidx.viewmodel.ext.android.viewModel
+import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
 class SearchFragment : Fragment() {
 
     private var _binding: FragmentSearchBinding? = null
     private val binding get() = _binding!!
 
-    private val yearFactsViewModel: YearFactsViewModel by viewModel()
+    private val yearFactsViewModel: YearFactsViewModel by sharedViewModel()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         _binding = FragmentSearchBinding.inflate(inflater, container, false)
@@ -31,10 +32,16 @@ class SearchFragment : Fragment() {
 
         binding.searchButton.setOnClickListener {
             yearFactsViewModel.search(Integer.parseInt(binding.yearEditText.text.toString()), isSpinnerEraAD())
+
+            val action = SearchFragmentDirections.toResultFragment()
+            binding.root.findNavController().navigate(action)
         }
 
         binding.randomButton.setOnClickListener {
             yearFactsViewModel.random()
+
+            val action = SearchFragmentDirections.toResultFragment()
+            binding.root.findNavController().navigate(action)
         }
 
         return binding.root

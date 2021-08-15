@@ -5,6 +5,6 @@ data class YearFact(
     val found: Boolean,
     val number: Float,
     val type: String,
-    val date: Int?,
+    val date: String?,
     val year: Int?
 )

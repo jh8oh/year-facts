@@ -6,6 +6,9 @@
         <item>AD</item>
         <item>BC</item>
     </string-array>
-    <string name="fragment_search_search_button">Search</string>
-    <string name="fragment_search_random_button">Random</string>
+    <string name="search_button">Search</string>
+    <string name="random_button">Random</string>
+
+    <string name="reroll_button">Reroll</string>
+    <string name="back_button">Back</string>
 </resources>

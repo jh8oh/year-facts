@@ -5,53 +5,44 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout
-        android:id="@+id/fragment_search_year_ll"
+    <TextView
+        android:id="@+id/year_text"
+        style="@style/TextAppearance.MaterialComponents.Headline4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:layout_marginBottom="@dimen/fragment_result_year_text_margin_bottom"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@id/year_fact_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/year_fact_text"
+        style="@style/TextAppearance.MaterialComponents.Body1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.4">
-
-        <EditText
-            android:id="@+id/year_edit_text"
-            style="@style/TextAppearance.MaterialComponents.Headline4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:hint="@string/fragment_search_year_hint"
-            android:importantForAutofill="no"
-            android:inputType="number" />
-
-        <Spinner
-            android:id="@+id/era_spinner"
-            style="@style/TextAppearance.MaterialComponents.Headline4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginStart="@dimen/fragment_search_ll_margin_between"
-            android:layout_marginLeft="@dimen/fragment_search_ll_margin_between"
-            android:minHeight="48dp"
-            tools:ignore="SpeakableTextPresentCheck" />
-
-    </LinearLayout>
+        app:layout_constraintVertical_bias="0.4" />
 
     <LinearLayout
+        android:id="@+id/fragment_result_button_ll"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/fragment_search_button_margin_top"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/fragment_search_year_ll">
+        app:layout_constraintTop_toBottomOf="@id/year_fact_text">
 
         <Button
-            android:id="@+id/search_button"
+            android:id="@+id/reroll_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/search_button"
+            android:text="@string/reroll_button"
             tools:ignore="ButtonStyle" />
 
         <Button
@@ -64,6 +55,18 @@
             android:text="@string/random_button" />
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/back_button"
+        style="?android:attr/buttonBarButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/fragment_result_back_button_margin_top"
+        android:text="@string/back_button"
+        android:textColor="@android:color/holo_red_dark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fragment_result_button_ll" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
